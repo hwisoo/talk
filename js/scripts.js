@@ -1,45 +1,35 @@
 $(document).ready(function() {
-    $("button#hello").click(function() {
-      $("ul#user").prepend("<li>Hello!</li>");
-      $("ul#webpage").prepend("<li>Why hello there!</li>");
-      $("ul#user").children("li").first().click(function() {
+
+    var dogSoundElement = document.getElementById("dogsound");
+    var catSoundElement = document.getElementById("catsound");
+
+    $("button#Cat").click(function() {
+      $("ul#cat-sound").prepend("<li>Meow!</li>");
+      $("ul#cat-sound").children("li").first().click(function() {
         $(this).remove();
       });
-        $("ul#webpage").children("li").first().click(function() {
-        $(this).remove();
-      });
+
+    catSoundElement.play();
             
    
     });
 
-    $("button#goodbye").click(function() {
-        $("ul#user").prepend("<li>Goodbye!</li>");
-        $("ul#webpage").prepend("<li>Goodbye, dear user!</li>");
-        $("ul#user").children("li").first().click(function() {
+    $("button#Dog").click(function() {
+        $("ul#dog-sound").prepend("<li>Woof!</li>");
+        $("ul#dog-sound").children("li").first().click(function() {
             $(this).remove();
         });
-        $("ul#webpage").children("li").first().click(function() {
-            $(this).remove();
-        });
-            
-   
-      });
-    
-      $("button#stop").click(function() {
-        $("ul#user").prepend("<li>Stop copying me!</li>");
-        $("ul#webpage").prepend("<li>Pardon me. I meant no offense.</li>");
-        $("ul#user").children("li").first().click(function() {
-            $(this).remove();
-        });
-        $("ul#webpage").children("li").first().click(function() {
-            $(this).remove();
-        });
-                
-          
-      });
+        dogSoundElement.play();
+    });
 
+    $("#showCat").click(function(){
+        $("#catImg").toggleClass("show");
+    })
+
+    $("#showDog").click(function(){
+        $("#dogImg").toggleClass("show");
+    })
     
     
-  
-   
-  });
+});
+
